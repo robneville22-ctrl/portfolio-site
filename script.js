@@ -23,12 +23,12 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Reveal animations (standard + directional + hero lines)
+// Reveal animations
 function revealElements() {
     // Standard and directional reveals
     document.querySelectorAll('.reveal:not(.visible), .reveal-left:not(.visible), .reveal-right:not(.visible)').forEach(el => {
         const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 30) {
+        if (rect.top < window.innerHeight - 50) {
             el.classList.add('visible');
         }
     });
@@ -47,9 +47,9 @@ function revealElements() {
 
 window.addEventListener('scroll', revealElements);
 window.addEventListener('load', revealElements);
-revealElements();
+setTimeout(revealElements, 100);
 
-// Subtle parallax on project screenshots
+// Subtle parallax on project previews
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 if (!prefersReducedMotion.matches) {
@@ -59,7 +59,7 @@ if (!prefersReducedMotion.matches) {
         previews.forEach(preview => {
             const rect = preview.getBoundingClientRect();
             const elementCenter = rect.top + rect.height / 2;
-            const offset = (elementCenter - viewportCenter) * 0.04;
+            const offset = (elementCenter - viewportCenter) * 0.05;
             preview.style.transform = `translateY(${offset}px)`;
         });
     }
@@ -67,4 +67,47 @@ if (!prefersReducedMotion.matches) {
     window.addEventListener('scroll', () => {
         requestAnimationFrame(updateParallax);
     }, { passive: true });
+}
+
+// Custom Cursor Logic
+const cursor = document.getElementById('custom-cursor');
+if (cursor && !prefersReducedMotion.matches) {
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let cursorX = mouseX;
+    let cursorY = mouseY;
+    
+    // Track mouse movement
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+    
+    // Smooth trailing effect
+    function animateCursor() {
+        // Move cursor toward mouse position (lerp)
+        const speed = 0.2;
+        cursorX += (mouseX - cursorX) * speed;
+        cursorY += (mouseY - cursorY) * speed;
+        
+        cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+        requestAnimationFrame(animateCursor);
+    }
+    
+    animateCursor();
+    
+    // Hover effects
+    const hoverElements = document.querySelectorAll('a, button, .nav-toggle, [data-cursor-hover]');
+    hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+    });
+    
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', () => {
+        cursor.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', () => {
+        cursor.style.opacity = '1';
+    });
 }

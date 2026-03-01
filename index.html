@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robert Neville</title>
+    <title>Robert Neville | Finance & Building</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
 
     <nav class="navbar">
         <div class="nav-container">
@@ -27,6 +30,7 @@
     </nav>
 
     <section class="hero">
+        <div class="bg-glow"></div>
         <div class="hero-content">
             <p class="hero-intro reveal">Robert Neville, CPA</p>
             <h1 class="hero-headline">
@@ -63,11 +67,17 @@
                         <span>Vercel</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://ats-pickem.vercel.app" target="_blank" rel="noopener">Live App</a>
-                        <a href="https://github.com/robneville22-ctrl/ats-pickem" target="_blank" rel="noopener">Source</a>
+                        <a href="https://ats-pickem.vercel.app" target="_blank" rel="noopener">
+                            Live App
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </a>
+                        <a href="https://github.com/robneville22-ctrl/ats-pickem" target="_blank" rel="noopener">
+                            Source
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </a>
                     </div>
                 </div>
-                <div class="project-preview reveal-right">
+                <div class="project-preview reveal-right" data-cursor-hover>
                     <div class="browser-frame">
                         <div class="browser-frame-dots">
                             <span></span><span></span><span></span>
@@ -91,11 +101,17 @@
                         <span>Vercel</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://soul-garden-sound.vercel.app" target="_blank" rel="noopener">Live Site</a>
-                        <a href="https://github.com/robneville22-ctrl/Soul-Garden-Sound-" target="_blank" rel="noopener">Source</a>
+                        <a href="https://soul-garden-sound.vercel.app" target="_blank" rel="noopener">
+                            Live Site
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </a>
+                        <a href="https://github.com/robneville22-ctrl/Soul-Garden-Sound-" target="_blank" rel="noopener">
+                            Source
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </a>
                     </div>
                 </div>
-                <div class="project-preview reveal-right">
+                <div class="project-preview reveal-right" data-cursor-hover>
                     <div class="browser-frame">
                         <div class="browser-frame-dots">
                             <span></span><span></span><span></span>
@@ -119,10 +135,13 @@
                         <span>Digital Forms</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://yeagerbaseball-wbfkwlxe.manus.space/" target="_blank" rel="noopener">Live Site</a>
+                        <a href="https://yeagerbaseball-wbfkwlxe.manus.space/" target="_blank" rel="noopener">
+                            Live Site
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </a>
                     </div>
                 </div>
-                <div class="project-preview reveal-right">
+                <div class="project-preview reveal-right" data-cursor-hover>
                     <div class="browser-frame">
                         <div class="browser-frame-dots">
                             <span></span><span></span><span></span>
@@ -145,8 +164,8 @@
                     <h2 class="reveal">A bit about me</h2>
                 </div>
                 <div class="about-right reveal">
-                    <p>I'm a CPA and Finance Director with 12+ years of FP&amp;A experience across high-growth tech companies&mdash;from EY audit to leading finance at a 250-person cybersecurity SaaS startup. I've orchestrated $100M+ fundraises, built financial dashboards, and designed data architectures in Snowflake.</p>
-                    <p>More recently, I led the evaluation and implementation of Claude Enterprise at Resilience and started building things myself. The projects above aren't demos&mdash;they're live applications with real users, built using AI-powered development tools. I'm most interested in what becomes possible when you pair senior-level business judgment with the ability to actually build.</p>
+                    <p>I'm a CPA and Finance Director with <strong>12+ years of FP&amp;A experience</strong> across high-growth tech companies&mdash;from EY audit to leading finance at a 250-person cybersecurity SaaS startup. I've orchestrated $100M+ fundraises, built financial dashboards, and designed data architectures in Snowflake.</p>
+                    <p>More recently, I led the evaluation and implementation of <strong>Claude Enterprise at Resilience</strong> and started building things myself. The projects above aren't demos&mdash;they're live applications with real users, built using AI-powered development tools. I'm most interested in what becomes possible when you pair senior-level business judgment with the ability to actually build.</p>
                     <div class="about-tools">
                         <p class="tools-label">Tools I work with</p>
                         <div class="tools-list">
@@ -188,6 +207,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=6"></script>
+    <script src="script.js?v=7"></script>
 </body>
 </html>
